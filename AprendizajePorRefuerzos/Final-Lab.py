@@ -218,24 +218,24 @@ clear_output()
 #     def load(self, path):
 #         self.model = torch.load(path)
 #
-# N_EPISODES = 5000
-# # agent = LinearCartPoleSolver(gym.make('CartPole-v0'), n_episodes=5000, debug=True)
-# agent = LinearCartPoleSolver(gym.make('Acrobot-v1'), n_episodes=N_EPISODES, debug=True)
-# scoresLineal, meanLineal = agent.run()
-# agent.save("./Lineal_pendulum_{}".format(N_EPISODES))
-#
-# # se muestra el reward/score optenido por episodio
-# plt.plot(np.array(scoresLineal), label='Lineal', c='#5c8cbc')
-# # plt.ylim(0, 200)
-# plt.title('Recompensa por episodio')
-# plt.legend(loc='upper left')
-# plt.show()
-#
-# plt.plot(np.array(meanLineal), label='Lineal', c='#5c8cbc')
-# # plt.ylim(0, 200)
-# plt.title('Recompensa promedio por episodio')
-# plt.legend(loc='upper left')
-# plt.show()
+N_EPISODES = 5000
+# agent = LinearCartPoleSolver(gym.make('CartPole-v0'), n_episodes=5000, debug=True)
+agent = LinearCartPoleSolver(gym.make('Acrobot-v1'), n_episodes=N_EPISODES, debug=True)
+scoresLineal, meanLineal = agent.run()
+agent.save("./Lineal_pendulum_{}".format(N_EPISODES))
+
+# se muestra el reward/score optenido por episodio
+plt.plot(np.array(scoresLineal), label='Lineal', c='#5c8cbc')
+# plt.ylim(0, 200)
+plt.title('Recompensa por episodio')
+plt.legend(loc='upper left')
+plt.show()
+
+plt.plot(np.array(meanLineal), label='Lineal', c='#5c8cbc')
+# plt.ylim(0, 200)
+plt.title('Recompensa promedio por episodio')
+plt.legend(loc='upper left')
+plt.show()
 #
 # with open("scoresLineal_pendulum", "wb") as scoresLineal:
 #     np.save(scoresLineal, np.array(scoresLineal))
@@ -452,24 +452,24 @@ clear_output()
 #     def load(self, path):
 #         self.model = torch.load(path)
 #
-# N_EPISODES = 5000
-# # agent = DDQN(gym.make('CartPole-v0'), n_episodes=N_EPISODES, debug=True)
-# agent = DDQN(gym.make('Acrobot-v1'), n_episodes=N_EPISODES, debug=True)
-# scoresDDQN, meanDDQN = agent.run()
-# agent.save("./DDQN_pendulum_{}".format(N_EPISODES))
-#
-# # se muestra el reward/score optenido por episodio
-# plt.plot(np.array(scoresDDQN), label='DDQN Pendulum', c='#7e5fa4')
-# plt.ylim(0, 200)
-# plt.title('Recompensa por episodio')
-# plt.legend(loc='upper left')
-# plt.show()
-#
-# plt.plot(np.array(meanDDQN), label='DDQN ', c='#7e5fa4')
-# plt.ylim(0, 200)
-# plt.title('Recompensa promedio por episodio')
-# plt.legend(loc='upper left')
-# plt.show()
+N_EPISODES = 5000
+# agent = DDQN(gym.make('CartPole-v0'), n_episodes=N_EPISODES, debug=True)
+agent = DDQN(gym.make('Acrobot-v1'), n_episodes=N_EPISODES, debug=True)
+scoresDDQN, meanDDQN = agent.run()
+agent.save("./DDQN_pendulum_{}".format(N_EPISODES))
+
+# se muestra el reward/score optenido por episodio
+plt.plot(np.array(scoresDDQN), label='DDQN Pendulum', c='#7e5fa4')
+plt.ylim(0, 200)
+plt.title('Recompensa por episodio')
+plt.legend(loc='upper left')
+plt.show()
+
+plt.plot(np.array(meanDDQN), label='DDQN ', c='#7e5fa4')
+plt.ylim(0, 200)
+plt.title('Recompensa promedio por episodio')
+plt.legend(loc='upper left')
+plt.show()
 # # with open("scoresDDQN", "wb") as f_scoresDDQN:
 # with open("scoresDDQN_pendulum", "wb") as f_scoresDDQN:
 #     np.save(f_scoresDDQN, np.array(scoresDDQN))
